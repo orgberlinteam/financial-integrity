@@ -82,9 +82,11 @@ const QUESTIONS = [
 ]
 const OPTION_WEIGHTS = [3, 1, 0]
 
-function calculateResult() {
-    const form = document.getElementById('quizForm');
-    const formData = new FormData(form);
+function calculateResult(e) {
+    e.preventDefault();
+
+    const quizForm = document.getElementById('quizForm');
+    const formData = new FormData(quizForm);
 
     let total = 0;
     for (const [key, value] of formData.entries()) {
@@ -97,8 +99,7 @@ function calculateResult() {
 
 function populateQuestions() {
     const quizForm = document.getElementById("quizForm")
-    const button = quizForm.querySelector("button").cloneNode(true)
-    quizForm.removeChild(quizForm.querySelector("button"))
+    const button = document.getElementById("button-template").cloneNode(true)
 
     for (const [i, q] of Object.entries(QUESTIONS)) {
         const iNum = parseInt(i)
@@ -120,8 +121,12 @@ function populateQuestions() {
         quizForm.appendChild(questionTemplate)
     }
     quizForm.appendChild(button)
+
+    document.getElementById("button-template").remove()
+    document.getElementById("question-template").remove()
 }
 
 window.onload = function() {
     populateQuestions()
+    document.getElementById("quizForm").addEventListener('submit', (e) =>  calculateResult(e))
 }
