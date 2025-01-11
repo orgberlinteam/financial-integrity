@@ -4,66 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple Choice Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .question {
-            margin: 20px 0;
-        }
-
-        .question label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .question input {
-            margin-right: 10px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .result {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    <style link="/public/style.css" />
 </head>
 <body>
     <div class="container">
@@ -95,19 +36,6 @@
         <div id="result" class="result"></div>
     </div>
 
-    <script>
-        function calculateResult() {
-            const form = document.getElementById('quizForm');
-            const formData = new FormData(form);
-
-            let total = 0;
-            for (const [key, value] of formData.entries()) {
-                total += parseInt(value, 10);
-            }
-
-            const resultDiv = document.getElementById('result');
-            resultDiv.textContent = `Your score is: ${total}`;
-        }
-    </script>
+    <script src="public/script.js" />
 </body>
 </html>
