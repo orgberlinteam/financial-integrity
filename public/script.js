@@ -100,6 +100,7 @@ function calculateResult(e) {
 function populateQuestions() {
     const quizForm = document.getElementById("quizForm")
     const button = document.getElementById("button-template").cloneNode(true)
+    button.removeAttribute("style")
 
     for (const [i, q] of Object.entries(QUESTIONS)) {
         const iNum = parseInt(i)
