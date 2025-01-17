@@ -7,25 +7,35 @@
     <link rel="stylesheet" href="public/style.css"></link>
 </head>
 <body>
-    <div class="container">
-        <h1>Financial Checklist</h1>
-        <form id="quizForm">
-            <div class="question" id="question-template" style="display: none;">
-                <label></label>
-                <label>
-                    <input required type="radio" name="q1" value="1">
-                </label>
-                <label>
-                    <input type="radio" name="q1" value="2">
-                </label>
-                <label>
-                    <input type="radio" name="q1" value="0">
-                </label>
-            </div>
-            <button type="submit" class="btn" id="button-template" style="display: none;">Submit</button>
-        </form>
-        <div id="result" class="result"></div>
+    <!-- Consent Banner -->
+    <div id="consent-banner" class="consent-banner">
+        <p>Your answers submitted in this form are completely anonymous.</p>
+        <button id="consent-btn">Okay</button>
     </div>
+
+    <!-- Form -->
+    <main>
+        <div class="container">
+            <h1>Financial Checklist</h1>
+            <form id="quizForm">
+                <div class="question" id="question-template" style="display: none;">
+                    <label class="question-prompt"></label>
+                    <label>
+                        <input type="radio" required name="q1" value="1">
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="2">
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="0">
+                    </label>
+                </div>
+                <button type="button" class="btn" id="submit-button" style="display: none;">Submit</button>
+            </form>
+            <span id="error-message" class="error-message invisible">Please fill in all required fields.</span>
+            <div id="result" class="result hidden"></div>
+        </div>
+    </main>
 
     <script src="public/script.js"></script>
 </body>
