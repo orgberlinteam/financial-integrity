@@ -68,11 +68,11 @@ const QUESTIONS = [
     ],
   },
   {
-    prompt: "Do you set a monthly budget for discretionary spending?",
+    prompt: "Do you set a monthly budget for daily costs spending?",
     options: [
       "Yes, and I usually stick to it",
       "Yes, but I often exceed it",
-      "No, I don't budget for discretionary spending",
+      "No, I don't budget for daily costs spending",
     ],
   },
   {
@@ -142,7 +142,7 @@ const QUESTIONS = [
   },
 
   {
-    prompt: "Do you involve your family/partner in financial decisions?",
+    prompt: "Do you involve your spouse or trusted friend in financial decisions?",
     options: [
       "Yes, we make decisions together",
       "Sometimes, depending on the situation",
